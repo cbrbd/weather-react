@@ -1,0 +1,65 @@
+.tg-wrapper{
+    display:flex;
+    align-self: flex-end;
+    padding: 1rem;
+}
+
+.toggle-switch{
+    position: relative;
+    display: inline-block;
+    width: 3.2rem;
+    height: 2rem;
+}
+
+.checkbox{
+    position: absolute;
+    opacity: 0;
+    
+    pointer-events: none;
+}
+
+.switch{
+    position: absolute;
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 25px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.2s ease;
+}
+
+.switch::before{
+    position: absolute;
+    content: "";
+    left: 0.1rem;
+    top: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* .checkbox + .switch::before{
+    transform: translateX(1.5rem);
+} */
+
+.checkbox:checked+.switch::before{
+    transform: translateX(1.5rem);
+}
+
+.checkbox:checked{
+    background-color: red;
+}
+
+.checkbox:focus + .switch{
+    outline: #5d9dd5 solid 1px;
+    box-shadow: 0 0 8px #5e9ed6;
+}
+
+.checkbox:checked + .switch{
+    background-color: blue;
+}
+
